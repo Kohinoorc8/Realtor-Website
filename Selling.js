@@ -5,6 +5,7 @@ import logo3 from './images/HouseWorth.JPG';
 import logo4 from './images/BeforePossession.JPG';
 import '../BuyP/Buying.css';
 
+/*This code showcases use of React Hooks, Responsive Design, Code Organization and Reusability, State Mangement and Event Handling. */
 
 function Selling() {
     const [option, setOption] = useState('staging')
@@ -84,4 +85,5 @@ function Selling() {
         </div>
     )
 }
+
 export default Selling; 
