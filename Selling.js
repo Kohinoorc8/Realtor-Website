@@ -7,16 +7,16 @@ import '../BuyP/Buying.css';
 
 /*This code showcases use of React Hooks, Responsive Design, Code Organization and Reusability, State Mangement and Event Handling. */
 
-function Selling() {
-    const [option, setOption] = useState('staging')
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+function Selling() { 
+    const [option, setOption] = useState('staging') /* Using two states to hold what option user is on and what layout to render */
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768) 
 
-    function handleOptionChange(newOption) {
+    function handleOptionChange(newOption) { /*Created this function to determine what happens when the user clicks a different picture (option */
         setOption(newOption)
         localStorage.setItem('option', newOption)
     }
 
-    useEffect(() => {
+    useEffect(() => { /* To remember last option chosen by user and react accordingly to screen size changes */
         const savedOption = localStorage.getItem('option')
         setOption(savedOption ? savedOption : 'staging')
 
@@ -25,7 +25,7 @@ function Selling() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    function decidedOptionView() {
+    function decidedOptionView() { /* Function rendering different sections depending on chosen option */
         
         if ( option === 'staging' ) {
             return(
@@ -55,13 +55,15 @@ function Selling() {
     }
 
 
-    return (
+    return ( /* The section that will be displayed on screen */
         <div>
-            <div className='navBar'>
+            <div className='navBar'> 
                 <div className="eachImg">
-                    <img src={logo} onClick={() => handleOptionChange('staging')}/>
-                    <p>Stage your home to sell</p>
-                    {isMobile && option === 'staging' && decidedOptionView()}
+                    //Constists of an image which runs the function with variable staging when clicked, they also have a description at bottom
+                    <img src={logo} onClick={() => handleOptionChange('staging')}/>  
+                    <p>Stage your home to sell</p>                                   
+                    {isMobile && option === 'staging' && decidedOptionView()} 
+                    //If user is using a mobile to see website the larger text will appear right below image 
                 </div>    
                 <div className="eachImg">
                     <img src={logo2} onClick={() => handleOptionChange('saving')}/>
@@ -80,10 +82,11 @@ function Selling() {
                 </div>
             </div>
 
-            {!isMobile && decidedOptionView()}
+            {!isMobile && decidedOptionView()} 
 
         </div>
     )
 }
 
 export default Selling; 
+
