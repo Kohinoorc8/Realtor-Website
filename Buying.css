@@ -1,0 +1,37 @@
+/* The Buy and Sell page both use the same CSS file as they have the same layout */
+
+.navBar { /* This is a flexbox so that the images appear on the horizontal axis and are easier to handle */
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.eachImg img {
+    width: 15rem;
+    height: 12rem;
+    border-width: 4px;
+    border-style:inset;
+    border-color: #1B264F;
+}
+
+.eachImg img:hover { /* When you hover over an image, it enlarges */
+    width: 17rem;
+    height: 14rem;
+    cursor: pointer;
+}
+
+.sections {
+    margin: 5%;
+}
+
+@media (max-width: 768px) {
+    .navBar {
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center;
+    }
+
+    .eachImg {
+        max-width: 80%;        /* Make images wider on phones */
+    }
+}
