@@ -12,7 +12,7 @@ Tech Stack:
 Features:
 - Responsive display which changes depending on screen size
 - Contact forms so clients can enter their information and be contacted, the submitted information is emailed to realtor
-- Uses API to gather and display various houses on sale
+- Will use API to gather and display various houses on sale
 
 
   
